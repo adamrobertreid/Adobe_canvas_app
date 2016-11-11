@@ -3,13 +3,46 @@ var canvas = document.getElementById('canvas');
 // use the getContext method to tell javascript that the canvas is 2d game/animation
 var context = canvas.getContext('2d');
 
+// set mousedown to fasle so when it's set to true in a function it will
+// render a line until mouseup equalling false
+var movingMouse = false;
+
+// set the radius of arc to 10
+var radius = 10;
+// Context property(lineWidth) increases the line to radius size
+context.lineWidth = radius * 2;
+
 // putPoint function creates a circle on the canvas when the mouse has been
 // pressed down
 var putPoint = function(event){
-    context.beginPath();
-    context.arc(event.offsetX, event.offsetY, 10, 0, Math.PI*2);
-    context.fill();
+    if(movingMouse){
+      context.lineTo(event.offsetX, event.offsetY);
+      context.stroke();
+      context.beginPath();
+      context.arc(event.offsetX, event.offsetY, radius, 0, Math.PI*2);
+      context.fill();
+      context.beginPath();
+      context.moveTo(event.offsetX, event.offsetY);
+  }
 }
 
-// listens out for the mousedown event where the putPoint function will make a mark
-canvas.addEventListener('mousedown', putPoint);
+var engage = function(event){
+    movingMouse = true;
+    // having put point called in this function allows you to create a point
+    putPoint(event);
+}
+
+var disengage = function(){
+    movingMouse = false;
+    // having begin path here prevents the end of a line connecting to the
+    // beginning of the start of a new line
+    context.beginPath();
+}
+// listens out for the mousemove event where the putPoint function will make a mark
+canvas.addEventListener('mousemove', putPoint);
+
+// listens for mousedown event
+canvas.addEventListener('mousedown', engage);
+
+// listens for mouseup event
+canvas.addEventListener('mouseup', disengage);

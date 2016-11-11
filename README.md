@@ -1,4 +1,4 @@
-# Adobe_canvas_app
+# Adobe_Canvas_App
 
 ### Challenge: 
 Create a drawing tool for mobile and desktop in which the user can draw using their mouse and/or finger on an empty canvas or import a photo and draw on top of it. Please commit to a public source control repo (like Github), and provide any documentation such as browser support, screen resolution support, and anything else that’s relevant for running and testing the project.

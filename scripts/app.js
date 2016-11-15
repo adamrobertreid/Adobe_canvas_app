@@ -1,3 +1,6 @@
+var imageLoader = document.getElementById('imageLoader');
+    imageLoader.addEventListener('change', handleImage, false);
+
 // creates a variable that grabs the canvas
 var canvas = document.getElementById('canvas');
 // use the getContext method to tell javascript that the canvas is 2d game/animation
@@ -24,6 +27,20 @@ var putPoint = function(event){
       context.beginPath();
       context.moveTo(event.offsetX, event.offsetY);
   }
+}
+
+function handleImage(e){
+  var reader = new FileReader();
+  reader.onload = function(event){
+    var img = new Image();
+    img.onload = function(){
+      canvas.width = img.width;
+      canvas.height = img.height;
+      context.drawImage(img, 0,0);
+    }
+    img.src = event.target.result
+  }
+  reader.readAsDataURL(e.target.files[0]);
 }
 
 var engage = function(event){

@@ -73,25 +73,25 @@ canvas.addEventListener('mousedown', engage);
 // listens for mouseup event
 canvas.addEventListener('mouseup', disengage);
 
-canvas.addEventListener('touchstart', engage);
+// canvas.addEventListener('touchstart', engage);
+//
+// canvas.addEventListener('touchend', disengage);
+//
+// canvas.addEventListener('touchmove', putPoint);
 
-canvas.addEventListener('touchend', disengage);
-
-canvas.addEventListener('touchmove', putPoint);
 
 
-
-document.body.addEventListener('touchstart', function (e) {
+document.body.addEventListener('touchstart', engage(e) {
   if (e.target == canvas){
     e.preventDefault();
   }
 }, false);
-document.body.addEventListener('touchend', function (e) {
+document.body.addEventListener('touchend', disengage(e) {
   if (e.target == canvas) {
     e.preventDefault();
   }
 }, false);
-document.body.addEventListener('touchmove', function (e) {
+document.body.addEventListener('touchmove', putPoint(e) {
   if (e.target == canvas) {
     e.preventDefault();
   }

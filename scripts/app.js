@@ -1,6 +1,9 @@
 var imageLoader = document.getElementById('imageLoader');
     imageLoader.addEventListener('change', handleImage, false);
 
+    document.getElementById('clear').addEventListener('click', function() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    }, false);
 // creates a variable that grabs the canvas
 var canvas = document.getElementById('canvas');
 // use the getContext method to tell javascript that the canvas is 2d game/animation

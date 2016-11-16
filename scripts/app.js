@@ -1,9 +1,13 @@
 var imageLoader = document.getElementById('imageLoader');
     imageLoader.addEventListener('change', handleImage, false);
 
+// Gets clear element ID to clear canvas
     document.getElementById('clear').addEventListener('click', function() {
       context.clearRect(0, 0, canvas.width, canvas.height);
     }, false);
+
+var colorInput = document.getElementById('color');
+
 // creates a variable that grabs the canvas
 var canvas = document.getElementById('canvas');
 // use the getContext method to tell javascript that the canvas is 2d game/animation
@@ -24,6 +28,7 @@ var putPoint = function(event){
     if(movingMouse){
       context.lineTo(event.offsetX, event.offsetY);
       context.stroke();
+      context.strokeStyle = colorInput.value;
       context.beginPath();
       context.arc(event.offsetX, event.offsetY, radius, 0, Math.PI*2);
       context.fill();

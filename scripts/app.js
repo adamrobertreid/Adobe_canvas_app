@@ -32,6 +32,7 @@ var putPoint = function(event){
       context.beginPath();
       context.arc(event.offsetX, event.offsetY, radius, 0, Math.PI*2);
       context.fill();
+      context.fillStyle = colorInput.value;
       context.beginPath();
       context.moveTo(event.offsetX, event.offsetY);
   }

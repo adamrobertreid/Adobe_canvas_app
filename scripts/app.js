@@ -72,3 +72,9 @@ canvas.addEventListener('mousedown', engage);
 
 // listens for mouseup event
 canvas.addEventListener('mouseup', disengage);
+
+canvas.addEventListener('touchstart', engage);
+
+canvas.addEventListener('touchend', disengage);
+
+canvas.addEventListener('touchmove', putPoint);

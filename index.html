@@ -7,28 +7,26 @@
         <title>Canvas</title>
     </head>
     <body>
-      <div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper">
-            <ul class="right">
-              <li><input type="file" id="imageLoader" name="imageLoader" /></li>
-              <li><input type="color" id="color" value="Color"></li>
-              <li><input type="button" id="clear" value="Clear"></li>
-              <a href="#" data-activates="nav-mobile" class="button-collapse"></a>
-            </ul>
-          </div>
-        </nav>
+      <div id="toolbar">
+        <div id="radiusbtn">
+          Radius <span id="radiusvalue">10</span>
+          <div id="decradius" class="radiusbtn">-</div>
+          <div id="incradius" class="radiusbtn">+</div>
+          <input type="file" id="imageLoader" name="imageLoader" />
+          <input type="color" id="color" value="Color" />
+          <input type="button" id="clear" value="Clear" />
+        </div>
       </div>
+
         <!-- the canvas tag creates an empty space where the canvas will be -->
-        <canvas id="canvas">
+        <canvas id="canvas" style="display: block">
             Sorry, at this point in time we don't support your browser!
         </canvas>
 
         <!-- you have to make sure the script is run after the canvas or else -->
         <!-- the script wont be able to find the canvas -->
         <script type="text/javascript" src="scripts/app.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
-        <!-- materialize cdn minified javascript cdn -->
+
     </body>
 </html>

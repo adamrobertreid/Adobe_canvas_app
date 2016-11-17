@@ -6,6 +6,7 @@ var imageLoader = document.getElementById('imageLoader');
       context.clearRect(0, 0, canvas.width, canvas.height);
     }, false);
 
+// collects color value from dom element input color
 var colorInput = document.getElementById('color');
 
 

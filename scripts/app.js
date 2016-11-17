@@ -8,11 +8,15 @@ var imageLoader = document.getElementById('imageLoader');
 
 var colorInput = document.getElementById('color');
 
+
 // creates a variable that grabs the canvas
 var canvas = document.getElementById('canvas');
 // use the getContext method to tell javascript that the canvas is 2d game/animation
 var context = canvas.getContext('2d');
 
+// sets canvas to be entire height of the window
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 // set mousedown to fasle so when it's set to true in a function it will
 // render a line until mouseup equalling false
 var movingMouse = false;

@@ -78,7 +78,7 @@ function touchStart(){
   putPoint(context,touchX,touchY,12);
 
   // prevents an additional mousedown event from triggering
-  event.preventDefault();
+  e.preventDefault();
 }
 
 function touchMove(e) {
@@ -90,7 +90,7 @@ function touchMove(e) {
   putPoint(context,touchX,touchY,12);
 
   // Prevent a scrolling action as a result of this touchmove triggering.
-  event.preventDefault();
+  e.preventDefault();
 
 }
 

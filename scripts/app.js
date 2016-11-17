@@ -65,7 +65,7 @@ var engage = function(event){
 var disengage = function(){
     movingMouse = false;
     // having begin path here prevents the end of a line connecting to the
-    // beginning of the start of a new line
+    // beginning of the start of a new line ends context.moveto
     context.beginPath();
 }
 // listens out for the mousemove event where the putPoint function will make a mark

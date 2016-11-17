@@ -7,7 +7,7 @@ var lastPt=null;
   touchzone.addEventListener("touchend", end, false);
   ctx = touchzone.getContext("2d");
 
-
+// draw path on canvas
 function draw(e) {
   e.preventDefault();
   if(lastPt!=null) {

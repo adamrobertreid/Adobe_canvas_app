@@ -24,36 +24,36 @@ context.lineWidth = radius * 2;
 
 // putPoint function creates a circle on the canvas when the mouse has been
 // pressed down
-var putPoint = function(event){
+var putPoint = function(e){
     if(movingMouse){
-      context.lineTo(event.clientX, event.clientY);
+      context.lineTo(e.clientX, e.clientY);
       context.stroke();
       context.strokeStyle = colorInput.value;
       context.beginPath();
-      context.arc(event.clientX, event.clientY, radius, 0, Math.PI*2);
+      context.arc(e.clientX, e.clientY, radius, 0, Math.PI*2);
       context.fill();
       context.fillStyle = colorInput.value;
       context.beginPath();
-      context.moveTo(event.clientX, event.clientY);
+      context.moveTo(e.clientX, e.clientY);
   }
 }
 
 function handleImage(e){
   var reader = new FileReader();
-  reader.onload = function(event){
+  reader.onload = function(e){
     var img = new Image();
     img.onload = function(){
       context.drawImage(img, 0,0);
     }
-    img.src = event.target.result
+    img.src = e.target.result
   }
   reader.readAsDataURL(e.target.files[0]);
 }
 
-var engage = function(event){
+var engage = function(e){
     movingMouse = true;
     // having put point called in this function allows you to create a point
-    putPoint(event);
+    putPoint(e);
 }
 
 var disengage = function(){
@@ -81,9 +81,9 @@ function touchStart(){
   event.preventDefault();
 }
 
-function touchMove(event) {
+function touchMove(e) {
   // update the touch co-ordinates
-  getTouchPos(event);
+  getTouchPos(e);
 
   // we do not need to check if the touch is engaged, since there will always
   // be contact with the screen by definition.

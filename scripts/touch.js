@@ -16,7 +16,7 @@ function draw(e) {
   if(lastPt!=null) {
     ctx.beginPath();
     ctx.moveTo(lastPt.x, lastPt.y);
-    cxt.arc(e.lastPt.x, e.lastPt.y, radius, 0, Math.PI*2);
+    // cxt.arc(e.lastPt.x, e.lastPt.y, radius, 0, Math.PI*2);
     cxt.fill();
     cxt.fillStyle = colorInput.value;
     ctx.lineTo(e.touches[0].pageX, e.touches[0].pageY);

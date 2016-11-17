@@ -2,23 +2,24 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles/styles.css">
-        <!-- materialize CDN -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
         <title>Canvas</title>
     </head>
     <body>
       <div id="toolbar">
-        <div id="radiusbtn">
+        <div id="rad">
           Radius <span id="radiusvalue">10</span>
-          <div id="decradius" class="radiusbtn">-</div>
-          <div id="incradius" class="radiusbtn">+</div>
-          <input type="file" id="imageLoader" name="imageLoader" />
-          <input type="color" id="color" value="Color" />
-          <input type="button" id="clear" value="Clear" />
+          <div id="decradius" class="radiuscontrol">-</div>
+          <div id="incradius" class="radiuscontrol">+</div>
+        </div>
+        <div id="excontrols">
+          <input class="input" type="file" id="imageLoader" name="imageLoader" />
+          <input class="input" type="color" id="color" value="Color" />
+          <input class="input" type="button" id="clear" value="Clear" />
         </div>
       </div>
 
         <!-- the canvas tag creates an empty space where the canvas will be -->
+        <!-- canvas usually displays inline so we make it block to get rid of SB -->
         <canvas id="canvas" style="display: block">
             Sorry, at this point in time we don't support your browser!
         </canvas>

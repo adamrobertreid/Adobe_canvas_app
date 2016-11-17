@@ -1,6 +1,28 @@
 # Adobe_Canvas_App
 
-### Challenge: 
+### Browser support - Desktop
+* Canvas application works on these browsers
+  - chrome
+  - firefox
+  - Safari ( Color picker issues in Safari browser )
+  - IE ( application not tested yet on Internet Exp )
+
+### Browser support - Mobile
+* Currently the ability to draw via smartphone with mobile touch feature isn't working
+* Color picker input="color" is not supported on mobile devices
+
+### Running Application - local
+* from Atom text editor - Open in Browser
+* Also able to run from GitHub pages at this URL
+  - https://adamrobertreid.github.io/Adobe_canvas_app/
+
+### Running Application - mobile
+* Run application via link ( drawing by touch feature not working )
+ - https://adamrobertreid.github.io/Adobe_canvas_app/
+
+-------------------------------------------------------------------------------
+
+### Challenge:
 Create a drawing tool for mobile and desktop in which the user can draw using their mouse and/or finger on an empty canvas or import a photo and draw on top of it. Please commit to a public source control repo (like Github), and provide any documentation such as browser support, screen resolution support, and anything else that’s relevant for running and testing the project.
 
 

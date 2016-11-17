@@ -69,48 +69,6 @@ var disengage = function(){
     }, false);
 
 
-// // define variables to keep track of the touch positions
-// var touchX;
-// var touchY;
-//
-// function touchStart(){
-//   getTouchPos();
-//   putPoint(context,touchX,touchY,12);
-//
-//   // prevents an additional mousedown event from triggering
-//   e.preventDefault();
-// }
-//
-// function touchMove(e) {
-//   // update the touch co-ordinates
-//   getTouchPos(e);
-//
-//   // we do not need to check if the touch is engaged, since there will always
-//   // be contact with the screen by definition.
-//   putPoint(context,touchX,touchY,12);
-//
-//   // Prevent a scrolling action as a result of this touchmove triggering.
-//   e.preventDefault();
-//
-// }
-//
-// // Get the touch position relative to the top-left of the canvas
-// // When we get the raw values of pageX and pageY below, they take into account the scrolling on the page
-// // but not the position relative to our target div. We'll adjust them using "target.offsetLeft" and
-// // "target.offsetTop" to get the correct values in relation to the top left of the canvas.
-// function getTouchPos(e) {
-//     if (!e)
-//         var e = event;
-//
-//     if(e.touches) {
-//       if(e.touches.length == 1) { // Only deal with one finger
-//         var touch = e.touches[0]; // Get the information for finger #1
-//         touchX=touch.pageX - touch.target.offsetLeft;
-//         touchY=touch.pageY - touch.target.offsetTop;
-//       }
-//     }
-// }
-
 // listens out for the mousemove event where the putPoint function will make a mark
 canvas.addEventListener('mousemove', putPoint);
 
@@ -119,6 +77,3 @@ canvas.addEventListener('mousedown', engage);
 
 // listens for mouseup event
 canvas.addEventListener('mouseup', disengage);
-
-// canvas.addEventListener('touchstart', touchStart, false);
-// canvas.addEventListener('touchmove', touchMove, false);

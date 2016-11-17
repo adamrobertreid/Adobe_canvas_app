@@ -69,21 +69,6 @@ var disengage = function(){
     }, false);
 
 
-// listens out for the mousemove event where the putPoint function will make a mark
-canvas.addEventListener('mousemove', putPoint);
-
-// listens for mousedown event
-canvas.addEventListener('mousedown', engage);
-
-// listens for mouseup event
-canvas.addEventListener('mouseup', disengage);
-
-// canvas.addEventListener('touchstart', engage);
-//
-// canvas.addEventListener('touchend', disengage);
-//
-// canvas.addEventListener('touchmove', putPoint);
-
 // define variables to keep track of the touch positions
 var touchX;
 var touchY;
@@ -98,7 +83,7 @@ function touchStart(){
 
 function touchMove(event) {
   // update the touch co-ordinates
-  getTouchPos(e);
+  getTouchPos(event);
 
   // we do not need to check if the touch is engaged, since there will always
   // be contact with the screen by definition.
@@ -125,6 +110,15 @@ function getTouchPos(e) {
       }
     }
 }
+
+// listens out for the mousemove event where the putPoint function will make a mark
+canvas.addEventListener('mousemove', putPoint);
+
+// listens for mousedown event
+canvas.addEventListener('mousedown', engage);
+
+// listens for mouseup event
+canvas.addEventListener('mouseup', disengage);
 
 canvas.addEventListener('touchstart', touchStart, false);
 canvas.addEventListener('touchmove', touchMove, false);

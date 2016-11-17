@@ -17,7 +17,7 @@
   - https://adamrobertreid.github.io/Adobe_canvas_app/
 
 ### Running Application - mobile
-* Run application via link ( drawing by touch feature not working )
+* Run application via link (color picker issues, color picker not working )
  - https://adamrobertreid.github.io/Adobe_canvas_app/
 
 -------------------------------------------------------------------------------

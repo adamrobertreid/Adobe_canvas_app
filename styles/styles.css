@@ -3,6 +3,12 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   font-family: sans-serif;
+
+  /* prevents cursor from selecting unwanted elements within the dom */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 body {
@@ -20,11 +26,23 @@ body {
   color: white;
 }
 
-.radiusbtn {
+.radiuscontrol {
   width: 30px;
   height: 30px;
   background-color: black;
+  border-radius: 25px;
   display: inline-block;
   text-align: center;
   padding: 5px;
+
+}
+#rad {
+  float: left;
+}
+#excontrols {
+  float: right;
+}
+
+#clear {
+  color: black;
 }

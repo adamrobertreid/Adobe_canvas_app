@@ -29,11 +29,14 @@ body {
 .radiuscontrol {
   width: 30px;
   height: 30px;
-  background-color: black;
-  border-radius: 25px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
   display: inline-block;
   text-align: center;
   padding: 5px;
+  margin-left: 5px;
+  color: black;
+  cursor: pointer;
 
 }
 #rad {
@@ -41,8 +44,29 @@ body {
 }
 #excontrols {
   float: right;
+  padding-right: 20px;
 }
 
 #clear {
   color: black;
+}
+
+#color {
+  margin-right: 10px;
+}
+input[type=button] {
+  border-radius: 5px;
+  border: 0;
+  width: 80px;
+  height:25px;
+  background: #f4f4f4;
+  cursor: pointer;
+}
+input[type=color] {
+  border-radius: 5px;
+  border: 0;
+  width: 80px;
+  height:25px;
+  background: #f4f4f4;
+  cursor: pointer;
 }

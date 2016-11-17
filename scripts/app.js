@@ -1,29 +1,24 @@
 var imageLoader = document.getElementById('imageLoader');
     imageLoader.addEventListener('change', handleImage, false);
 
-// Gets clear element ID to clear canvas
-    document.getElementById('clear').addEventListener('click', function() {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-    }, false);
-
-// collects color value from dom element input color
-var colorInput = document.getElementById('color');
-
-
 // creates a variable that grabs the canvas
 var canvas = document.getElementById('canvas');
 // use the getContext method to tell javascript that the canvas is 2d game/animation
 var context = canvas.getContext('2d');
+
+// collects color value from dom element input color
+var colorInput = document.getElementById('color');
+
+// set the radius of arc to 10
+var radius = 10;
+var movingMouse = false;
 
 // sets canvas to be entire height of the window
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 // set mousedown to fasle so when it's set to true in a function it will
 // render a line until mouseup equalling false
-var movingMouse = false;
 
-// set the radius of arc to 10
-var radius = 10;
 // Context property(lineWidth) increases the line to radius size
 context.lineWidth = radius * 2;
 
@@ -31,15 +26,15 @@ context.lineWidth = radius * 2;
 // pressed down
 var putPoint = function(event){
     if(movingMouse){
-      context.lineTo(event.offsetX, event.offsetY);
+      context.lineTo(event.clientX, event.clientY);
       context.stroke();
       context.strokeStyle = colorInput.value;
       context.beginPath();
-      context.arc(event.offsetX, event.offsetY, radius, 0, Math.PI*2);
+      context.arc(event.clientX, event.clientY, radius, 0, Math.PI*2);
       context.fill();
       context.fillStyle = colorInput.value;
       context.beginPath();
-      context.moveTo(event.offsetX, event.offsetY);
+      context.moveTo(event.clientX, event.clientY);
   }
 }
 
@@ -48,8 +43,6 @@ function handleImage(e){
   reader.onload = function(event){
     var img = new Image();
     img.onload = function(){
-      // canvas.width = img.width;
-      // canvas.height = img.height;
       context.drawImage(img, 0,0);
     }
     img.src = event.target.result
@@ -69,6 +62,13 @@ var disengage = function(){
     // beginning of the start of a new line ends context.moveto
     context.beginPath();
 }
+
+// Gets clear element ID to clear canvas
+    document.getElementById('clear').addEventListener('click', function() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    }, false);
+
+
 // listens out for the mousemove event where the putPoint function will make a mark
 canvas.addEventListener('mousemove', putPoint);
 
